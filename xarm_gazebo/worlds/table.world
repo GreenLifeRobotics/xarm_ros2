@@ -15,14 +15,68 @@
 
     <include>
       <uri>model://bowl</uri>
-      <name>bowl</name>
-      <pose>0.0 -0.84 1.0175 0 0 0</pose> <!-- bowl centered on top of the table -->
+      <name>bowl_1</name>
+      <pose>0.0 -0.84 1.0175 0 0 0</pose> <!-- Bowl centered on top of the table -->
+    </include>
+
+    <include>
+      <uri>model://bowl</uri>
+      <name>bowl_2</name>
+      <pose>-0.4 -0.98 1.0175 0 0 0</pose> <!-- Bowl centered on top of the table -->
+    </include>
+
+    <include>
+      <uri>model://bowl</uri>
+      <name>bowl_3</name>
+      <pose>-0.4 -0.7 1.0175 0 0 0</pose> <!-- Bowl centered on top of the table -->
+    </include>
+
+    <include>
+      <uri>model://coke_can</uri>
+      <name>coke_can</name>
+      <pose>0.6 -0.84 1.04 0 0 0</pose> <!-- Coke can to the left of the bowl -->
+    </include>
+
+    <include>
+      <uri>model://tomato2</uri>
+      <name>tomato_1</name>
+      <pose>0.4 -0.81 1.54 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://tomato2</uri>
+      <name>tomato_2</name>
+      <pose>0.4 -0.84 1.54 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://tomato2</uri>
+      <name>tomato_3</name>
+      <pose>0.4 -0.87 1.54 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://cucumber2</uri>
+      <name>cucumber_1</name>
+      <pose>0.4 -0.76 1.04 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://cucumber2</uri>
+      <name>cucumber_2</name>
+      <pose>0.4 -0.84 1.04 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://cucumber2</uri>
+      <name>cucumber_3</name>
+      <pose>0.4 -0.92 1.04 0 0 0</pose>
     </include>
 
      <include>
-      <uri>model://coke_can</uri>
-      <name>coke_can</name>
-      <pose>-0.15 -0.84 1.0175 0 0 0</pose> <!-- Coke can to the left of the bowl -->
+      <uri>model://cabinet</uri>
+      <name>cabinet_1</name>
+      <pose>0.5 -0.84 1.0175 0 0 ${1.5708/2}</pose>
     </include>
 
     <physics type="ode">
@@ -31,6 +85,5 @@
       <real_time_update_rate>1000</real_time_update_rate>
       <gravity>0 0 -9.81</gravity>
     </physics>
-
   </world>
 </sdf>

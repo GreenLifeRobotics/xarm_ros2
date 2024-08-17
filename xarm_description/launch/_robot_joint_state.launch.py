@@ -27,7 +27,7 @@ def launch_setup(context, *args, **kwargs):
     robot_type = LaunchConfiguration('robot_type', default='xarm')
     ros2_control_plugin = LaunchConfiguration('ros2_control_plugin', default='uf_robot_hardware/UFRobotSystemHardware')
     joint_states_remapping = LaunchConfiguration('joint_states_remapping', default='joint_states')
-
+    #add_realsense_d435i_static = LaunchConfiguration('add_realsense_d435i_static', default=False)
     add_realsense_d435i = LaunchConfiguration('add_realsense_d435i', default=False)
     model1300 = LaunchConfiguration('model1300', default=False)
 
@@ -63,6 +63,7 @@ def launch_setup(context, *args, **kwargs):
             'robot_type': robot_type,
             'ros2_control_plugin': ros2_control_plugin,
             'joint_states_remapping': joint_states_remapping,
+            #"add_realsense_d435i_static" : add_realsense_d435i_static,
             'add_realsense_d435i': add_realsense_d435i,
             'model1300': model1300,
             'add_other_geometry': add_other_geometry,

@@ -48,6 +48,9 @@
     <xacro:include filename="$(find xarm_description)/urdf/_private_macro.xacro" />
     <xacro:device_macro_begin />
 
+    <!-- define property -->
+    <xacro:property name="M_PI" value="3.1415926535897931" />
+
     <!-- Load Common Material -->
     <xacro:include filename="$(find xarm_description)/urdf/common/common.material.xacro" />
     <xacro:common_material prefix="${prefix}"/>
@@ -227,6 +230,11 @@
       <origin xyz="0 0 0" rpy="0 0 0" />
       <parent link="${prefix}link${dof}" />
       <child link="${prefix}link_eef" />
+    </joint>
+    <joint name="${prefix}camera_static" type="fixed">
+      <parent link="${prefix}link_base" />
+      <child link="${prefix}link_eef_static" />
+      <origin xyz="-0.3 0.0 2.0" rpy="0 ${M_PI} 0" />
     </joint>
     
     <xacro:if value="${add_gripper}">

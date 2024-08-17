@@ -1,0 +1,67 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="cucumber">
+    <link name="link">
+      <pose>0 0 0.025 0 1.5708 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia>
+          <!-- Inertia for a solid cylinder -->
+          <ixx>3.13e-5</ixx> 
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>3.13e-5</iyy> 
+          <iyz>0</iyz>
+          <izz>6.25e-5</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.0125</radius> <!-- Half of the 25 mm diameter -->
+            <length>0.2</length> <!-- 500 mm length -->
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1000</kp>
+              <kd>500</kd>
+              <max_vel>100.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <torsional>
+              <coefficient>2.0</coefficient>
+              <use_patch_radius>0</use_patch_radius>
+              <surface_radius>0.01</surface_radius>
+            </torsional>
+          </friction>
+        </surface>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.0125</radius> <!-- Half of the 25 mm diameter -->
+            <length>0.2</length> <!-- 100 mm length -->
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0 1 0 1</ambient> <!-- Green color for cucumber -->
+          <diffuse>0 1 0 1</diffuse>
+          <specular>0.5 0.5 0.5 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+
+      <!-- approximate rolling friction -->
+      <velocity_decay>
+        <linear>0.1</linear>
+        <angular>0.25</angular>
+      </velocity_decay>
+    </link>
+  </model>
+</sdf>
