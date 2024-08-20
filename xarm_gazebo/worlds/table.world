@@ -16,25 +16,25 @@
     <include>
       <uri>model://bowl</uri>
       <name>bowl_1</name>
-      <pose>0.0 -0.84 1.0175 0 0 0</pose> <!-- Bowl centered on top of the table -->
+      <pose>0.0 -0.84 1.0175 0 0 0</pose> 
     </include>
 
     <include>
       <uri>model://bowl</uri>
       <name>bowl_2</name>
-      <pose>-0.4 -0.98 1.0175 0 0 0</pose> <!-- Bowl centered on top of the table -->
+      <pose>-0.4 -0.98 1.0175 0 0 0</pose> 
     </include>
 
     <include>
       <uri>model://bowl</uri>
       <name>bowl_3</name>
-      <pose>-0.4 -0.7 1.0175 0 0 0</pose> <!-- Bowl centered on top of the table -->
+      <pose>-0.4 -0.7 1.0175 0 0 0</pose> 
     </include>
 
     <include>
       <uri>model://coke_can</uri>
       <name>coke_can</name>
-      <pose>0.6 -0.84 1.04 0 0 0</pose> <!-- Coke can to the left of the bowl -->
+      <pose>0.6 -0.84 1.04 0 0 0</pose>
     </include>
 
     <include>

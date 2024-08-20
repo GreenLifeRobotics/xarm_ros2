@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
-<robot name="camera_dynamic" xmlns:xacro="http://ros.org/wiki/xacro">
+<robot name="camera_static" xmlns:xacro="http://ros.org/wiki/xacro">
 
-  <xacro:macro name="realsense_gazebo" params="prefix:='' ">
-    <gazebo reference="${prefix}camera_depth_frame">
+  <xacro:macro name="realsense_static_gazebo" params="prefix:='' ">
+    <gazebo reference="${prefix}camera_static_depth_frame">
       <sensor name="cameradepth" type="depth">
-        <camera name="camera">
+        <camera name="camera_static">
           <horizontal_fov>1.57</horizontal_fov>
           <image>
             <width>1280</width>
@@ -25,9 +25,9 @@
         <visualize>0</visualize>
       </sensor>
     </gazebo>
-    <gazebo reference="${prefix}camera_color_frame">
+    <gazebo reference="${prefix}camera_static_color_frame">
       <sensor name="cameracolor" type="camera">
-        <camera name="camera">
+        <camera name="camera_static">
           <horizontal_fov>1.57</horizontal_fov>
           <image>
             <width>1280</width>
@@ -49,9 +49,9 @@
         <visualize>1</visualize>
       </sensor>
     </gazebo>
-    <gazebo reference="${prefix}camera_left_ir_frame">
+    <gazebo reference="${prefix}camera_static_left_ir_frame">
       <sensor name="cameraired1" type="camera">
-        <camera name="camera">
+        <camera name="camera_static">
           <horizontal_fov>1.57</horizontal_fov>
           <image>
             <width>1280</width>
@@ -73,9 +73,9 @@
         <visualize>0</visualize>
       </sensor>
     </gazebo>
-    <gazebo reference="${prefix}camera_right_ir_frame">
+    <gazebo reference="${prefix}camera_static_right_ir_frame">
       <sensor name="cameraired2" type="camera">
-        <camera name="camera">
+        <camera name="camera_static">
           <horizontal_fov>1.57</horizontal_fov>
           <image>
             <width>1280</width>
@@ -103,22 +103,22 @@
         <depthUpdateRate>30.0</depthUpdateRate>
         <colorUpdateRate>30.0</colorUpdateRate>
         <infraredUpdateRate>30.0</infraredUpdateRate>
-        <depthTopicName>aligned_depth_to_color/image_raw</depthTopicName>
-        <depthCameraInfoTopicName>depth/camera_info</depthCameraInfoTopicName>
-        <colorTopicName>color/image_raw</colorTopicName>
-        <colorCameraInfoTopicName>color/camera_info</colorCameraInfoTopicName>
-        <infrared1TopicName>infra1/image_raw</infrared1TopicName>
-        <infrared1CameraInfoTopicName>infra1/camera_info</infrared1CameraInfoTopicName>
-        <infrared2TopicName>infra2/image_raw</infrared2TopicName>
-        <infrared2CameraInfoTopicName>infra2/camera_info</infrared2CameraInfoTopicName>
-        <colorOpticalframeName>camera_color_optical_frame</colorOpticalframeName>
-        <depthOpticalframeName>camera_depth_optical_frame</depthOpticalframeName>
-        <infrared1OpticalframeName>camera_left_ir_optical_frame</infrared1OpticalframeName>
-        <infrared2OpticalframeName>camera_right_ir_optical_frame</infrared2OpticalframeName>
+        <depthTopicName>aligned_depth_to_color_static/image_raw_static</depthTopicName>
+        <depthCameraInfoTopicName>depth_static/camera_info_static</depthCameraInfoTopicName>
+        <colorTopicName>color_static/image_raw_static</colorTopicName>
+        <colorCameraInfoTopicName>color_static/camera_info_static</colorCameraInfoTopicName>
+        <infrared1TopicName>infra1_static/image_raw_static</infrared1TopicName>
+        <infrared1CameraInfoTopicName>infra1_static/camera_info_static</infrared1CameraInfoTopicName>
+        <infrared2TopicName>infra2_static/image_raw_static</infrared2TopicName>
+        <infrared2CameraInfoTopicName>infra2_static/camera_info_static</infrared2CameraInfoTopicName>
+        <colorOpticalframeName>camera_color_optical_frame_static</colorOpticalframeName>
+        <depthOpticalframeName>camera_depth_optical_frame_static</depthOpticalframeName>
+        <infrared1OpticalframeName>camera_left_ir_optical_frame_static</infrared1OpticalframeName>
+        <infrared2OpticalframeName>camera_right_ir_optical_frame_static</infrared2OpticalframeName>
         <rangeMinDepth>0.3</rangeMinDepth>
         <rangeMaxDepth>3.0</rangeMaxDepth>
         <pointCloud>true</pointCloud>
-        <pointCloudTopicName>depth/color/points</pointCloudTopicName>
+        <pointCloudTopicName>depth_static/color/points</pointCloudTopicName>
         <pointCloudCutoff>0.3</pointCloudCutoff>
       </plugin>
     </gazebo>

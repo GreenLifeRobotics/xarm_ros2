@@ -231,10 +231,23 @@
       <parent link="${prefix}link${dof}" />
       <child link="${prefix}link_eef" />
     </joint>
-    <joint name="${prefix}camera_static" type="fixed">
+
+    <xacro:if value="${add_realsense_d435i}">
+      <!-- (xarm) Load RealSense D435i URDF -->
+      <xacro:include filename="$(find xarm_description)/urdf/camera_static/realsense_d435i_static.urdf.xacro" />
+      <xacro:d435i_static_urdf prefix="${prefix}" add_d435i_links="${add_d435i_links}" />
+      <xacro:if value="${add_d435i_links}">
+        <xacro:include filename="$(find xarm_description)/urdf/camera_static/realsense_static.gazebo.xacro" />    
+        <xacro:realsense_static_gazebo prefix="${prefix}" />
+      </xacro:if>
+    </xacro:if>
+    <xacro:unless value="${add_realsense_d435i}">
+      <link name="${prefix}link_eef_static"/>
+    </xacro:unless>
+    <joint name="${prefix}joint_eef_static" type="fixed">
+      <origin xyz="-0.3 0.0 2.0" rpy="0 ${M_PI} 0" />
       <parent link="${prefix}link_base" />
       <child link="${prefix}link_eef_static" />
-      <origin xyz="-0.3 0.0 2.0" rpy="0 ${M_PI} 0" />
     </joint>
     
     <xacro:if value="${add_gripper}">

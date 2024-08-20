@@ -1,15 +1,11 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://ros.org/wiki/xacro">
+<robot name="camera_gripper" xmlns:xacro="http://ros.org/wiki/xacro">
   <xacro:macro name="d435i_urdf" params="prefix:='' add_d435i_links:=false">
 
     <!-- define property -->
     <xacro:property name="M_PI" value="3.1415926535897931" />
     
     <link name="${prefix}link_eef">
-      
-    </link>
-
-    <link name="${prefix}link_eef_static">
       <xacro:common_link_visual 
         mesh_filename="camera/realsense/visual/d435_with_cam_stand"  
         origin_xyz="0 0 0" 
@@ -42,7 +38,7 @@
       <link name="${prefix}camera_right_ir_optical_frame"></link>
 
       <joint name="${prefix}camera_link_joint" type="fixed">
-        <parent link="${prefix}link_eef_static" />
+        <parent link="${prefix}link_eef" />
         <child link="${prefix}camera_link" />
         <origin xyz="0.06746 -0.0175 0.0237" rpy="${M_PI} ${-M_PI/2} 0" />
       </joint>
